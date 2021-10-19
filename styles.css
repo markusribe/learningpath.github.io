@@ -53,6 +53,6 @@ header {
   background: lightskyblue;
 }
 
-a:link {
+.button-blue:link {
   text-decoration: none;
 }
