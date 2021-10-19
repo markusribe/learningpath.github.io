@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 25px;
+    height: 25px;
+    background: red;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+}
