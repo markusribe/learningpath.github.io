@@ -1,23 +1,58 @@
 header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #logo {
-    width: 25px;
-    height: 25px;
-    background: red;
-    border-radius: 50%;
-    border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  background: lightskyblue;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
 .main-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  height: 580px;
 }
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.7em;
+  height: 100%;
+  padding: 20px;
+}
+
+.input-area {
+  padding: 10px;
+  font-size: 0.7em;
+}
+
+#tlf {
+  margin-bottom: auto;
+}
+/* (^)tlf og email-text(v) legger til mellomrommet mellom tlf og email */
+.email-text {
+  margin-top: auto;
+}
+
+.button-blue {
+  background: cornflowerblue;
+  text-align: center;
+  color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: auto;
+}
+
+.button-blue:hover {
+  background: lightskyblue;
+}
+
+a:link {
+  text-decoration: none;
 }
