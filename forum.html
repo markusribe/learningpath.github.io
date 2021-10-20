@@ -8,6 +8,27 @@
     <style>
         .forum-container {
             display: grid;
+            gap: 5px;
+            font-size: 1.4em;
+        }
+        
+        /* til mobile skjermer */
+        .forum-container {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+                                    "logo . ."
+                                    "navbar navbar navbar"
+                                    "subject1 subject2 subject3"
+                                    "subject4 subject5 subject6"
+                                    "subject7 subject8 subject9"
+                                    "subject10 subject11 subject12"
+                                    " . search .";
+            ;
+        }
+
+        /* for desktop og større skjermer */
+        @media (min-width: 760px) {
+            .forum-container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-areas:    "logo navbar navbar navbar navbar navbar . "
                                     " . . subject1 subject2 subject3 . . "
@@ -15,12 +36,12 @@
                                     " . . subject7 subject8 subject9 . . "
                                     " . . subject10 subject11 subject12 . . "
                                     " . . . search . . . ";
-            gap: 5px;
-            font-size: 1.4em;
+            }
         }
 
         .logo {
             grid-area: logo;
+            font-size: 0.8em;
         }
         .navbar {
             grid-area: navbar;
@@ -30,14 +51,15 @@
         }
 
         .navbar > p {
-            margin-left: 20px;
+            font-size: 0.8em;
+            margin-left: px;
             border: 1px solid black;
             padding: 20px;
         }
 
         .forum-subject {
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             border: 1px solid black;
             border-radius: 10px;
         }
@@ -98,17 +120,17 @@
                     <p class="help">help</p>
                 </div>
             <div class="forum-subject subject1">
-                    Subject osv
+                    Javascript
             </div>
             <div class="forum-subject subject2">
-                    Subject osv  
+                    Historie  
             </div>
             <div class="forum-subject subject3">
-                    Subject osv
+                    Økonomi
             </div>
-            <div class="forum-subject subject4">
-                    Subject osv
-            </div>
+            <a href="./forum-chat.html" class="forum-subject subject4">
+                    HTML og CSS
+            </a>
             <div class="forum-subject subject5">
                     Subject osv
             </div>
