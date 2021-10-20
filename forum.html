@@ -8,7 +8,8 @@
     <style>
         .forum-container {
             display: grid;
-            gap: 5px;
+            row-gap: 20px;
+            column-gap: 10px;
             font-size: 1.4em;
         }
         
@@ -17,12 +18,13 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-areas: 
                                     "logo . ."
-                                    "navbar navbar navbar"
+                                    ". popular ."
                                     "subject1 subject2 subject3"
                                     "subject4 subject5 subject6"
                                     "subject7 subject8 subject9"
                                     "subject10 subject11 subject12"
-                                    " . search .";
+                                    " . search ."
+                                    "navbar navbar navbar"
             ;
         }
 
@@ -31,6 +33,7 @@
             .forum-container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-areas:    "logo navbar navbar navbar navbar navbar . "
+                                    " . . . popular . . ."
                                     " . . subject1 subject2 subject3 . . "
                                     " . . subject4 subject5 subject6 . . "
                                     " . . subject7 subject8 subject9 . . "
@@ -52,9 +55,17 @@
 
         .navbar > p {
             font-size: 0.8em;
-            margin-left: px;
             border: 1px solid black;
             padding: 20px;
+            border-radius: 10px;
+        }
+
+        .popular {
+            grid-area: popular;
+            text-align: center;
+            background: cornflowerblue;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         .forum-subject {
@@ -62,6 +73,10 @@
             padding: 10px;
             border: 1px solid black;
             border-radius: 10px;
+        }
+
+        .forum-subject:hover {
+            background: skyblue;
         }
 
         .subject1 {
@@ -103,7 +118,16 @@
         }
         .search {
             grid-area: search;
-            padding: 20px;
+            text-align: center;
+            background: cornflowerblue;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .search > input {
+            padding: 10px;
         }
 
     </style>
@@ -118,6 +142,9 @@
                     <p class="forum">forum</p>
                     <p class="messages">messages</p>
                     <p class="help">help</p>
+                </div>
+                <div class="popular">
+                    Popular Subjects
                 </div>
             <div class="forum-subject subject1">
                     Javascript
@@ -155,9 +182,11 @@
             <div class="forum-subject subject12">
                     Subject osv
             </div>
-            <div class="search">
-                Search for subjects
-            </div>
+            <form class="search">
+                <label for="forum-search">Or search for other subjects:</label>
+                <input type="text" id="forum-search">
+                <button>Search</button>
+            </form>
     </div>
 </body>
 </html>
