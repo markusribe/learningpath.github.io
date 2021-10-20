@@ -6,153 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
     <style>
-        .forum-grid-container {
+        .forum-container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-areas:    "logo - navbar navbar navbar navbar - "
-                                    " - - forum1 forum2 forum3 - -"
-                                    " - - forum4 forum5 forum6 - -"
-                                    " - - forum7 forum8 forum9 - -"
-                                    " - - forum10 forum11 forum12 - -"
-                                    " - - - search - - -"
-            ;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas:    "logo navbar navbar navbar navbar navbar . "
+                                    " . . subject1 subject2 subject3 . . "
+                                    " . . subject4 subject5 subject6 . . "
+                                    " . . subject7 subject8 subject9 . . "
+                                    " . . subject10 subject11 subject12 . . "
+                                    " . . . search . . . ";
+            gap: 5px;
+            font-size: 1.4em;
         }
-        
+
         .logo {
             grid-area: logo;
         }
-        
         .navbar {
             grid-area: navbar;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        svg {
-            width: 50px;
-            height: 50px;
-            background: blue;
+        .navbar > p {
+            margin-left: 20px;
+            border: 1px solid black;
+            padding: 20px;
         }
 
-        .forum1 {
-            grid-area: forum1;
+        .forum-subject {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .subject1 {
+            grid-area: subject1;
             
         }
-        .forum2 {
-            grid-area: forum2;
+        .subject2 {
+            grid-area: subject2;
         }
-        .forum3 {
-            grid-area: forum3;
+        .subject3 {
+            grid-area: subject3;
         }
-        .forum4 {
-            grid-area: forum4;
+        .subject4 {
+            grid-area: subject4;
         }
-        .forum5 {
-            grid-area: forum5;
+        .subject5 {
+            grid-area: subject5;
         }
-        .forum6 {
-            grid-area: forum6;
+        .subject6 {
+            grid-area: subject6;
         }
-        .forum7 {
-            grid-area: forum7;
+        .subject7 {
+            grid-area: subject7;
         }
-        .forum8 {
-            grid-area: forum8
+        .subject8 {
+            grid-area: subject8;
         }
-        .forum9 {
-            grid-area: forum9
+        .subject9 {
+            grid-area: subject9;
         }
-        .forum10 {
-            grid-area: forum10
+        .subject10 {
+            grid-area: subject10;
         }
-        .forum11 {
-            grid-area: forum11
+        .subject11 {
+            grid-area: subject11;
         }
-        .forum12 {
-            grid-area: forum12
+        .subject12 {
+            grid-area: subject12;
+        }
+        .search {
+            grid-area: search;
+            padding: 20px;
         }
 
     </style>
 </head>
 <body>
-    <div class="forum-grid-container">
+    <div class="forum-container">
         <header class="logo">
-            <h1>LearningPath</h1>
+            <h3>LearningPath</h3>
         </header>
-        <nav class="navbar">
-            <div class="account">
-                <svg></svg>
-            </div>
-            <div class="forum">
-                <svg></svg>
-            </div>
-            <div class="messages">
-                <svg></svg>
-            </div>
-            <div class="help">
-                <svg></svg>
-            </div>
-        </nav>
-        <section class="forum-subject-container">
-            <div class="forum-subject forum1">
-                <p>
+                <div class="navbar">
+                    <p class="account">account</p>
+                    <p class="forum">forum</p>
+                    <p class="messages">messages</p>
+                    <p class="help">help</p>
+                </div>
+            <div class="forum-subject subject1">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum2">
-                <p>
+            <div class="forum-subject subject2">
+                    Subject osv  
+            </div>
+            <div class="forum-subject subject3">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum3">
-                <p>
+            <div class="forum-subject subject4">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum4">
-                <p>
+            <div class="forum-subject subject5">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum5">
-                <p>
+            <div class="forum-subject subject6">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum6">
-                <p>
+            <div class="forum-subject subject7">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum7">
-                <p>
+            <div class="forum-subject subject8">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum8">
-                <p>
+            <div class="forum-subject subject9">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum9">
-                <p>
+            <div class="forum-subject subject10">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum10">
-                <p>
+            <div class="forum-subject subject11">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum11">
-                <p>
+            <div class="forum-subject subject12">
                     Subject osv
-                </p>
             </div>
-            <div class="forum-subject forum12">
-                <p>
-                    Subject osv
-                </p>
+            <div class="search">
+                Search for subjects
             </div>
-        </section>
     </div>
 </body>
 </html>
