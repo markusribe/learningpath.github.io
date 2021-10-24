@@ -1,0 +1,9 @@
+
+{ 
+    "_comment": "Dette er et eksempel på brukerdata i learningpath",
+    "id" : "1",
+    "name": "Test testemann",
+    "tlf" : "12345678",
+    "email" : "test@uia.no",
+    "pass" : "abc123"
+}

@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LearningPath login</title>
 
     <style>
@@ -24,7 +23,7 @@
         .main-container {
             display: flex;
             justify-content: center;
-            height: 580px;
+            height: auto;
         }
 
         .input-container {
@@ -38,14 +37,6 @@
         .input-area {
             padding: 10px;
             font-size: 0.7em;
-        }
-
-        #tlf {
-            margin-bottom: auto;
-        }
-        /* (^)tlf og email-text(v) legger til mellomrommet mellom tlf og email */
-        .email-text {
-            margin-top: auto;
         }
 
         .button-blue {
@@ -66,10 +57,6 @@
         .button-blue:link {
             text-decoration: none;
         }
-
-        .login-link {
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -81,23 +68,31 @@
     <div class=main-container>
         <form> 
             <div class=input-container>
-                <h3>Create your account</h3>
-                <label for="name">Full Name:</label>
-                <input type="text" name="name" id="name" class="input-area">
-                <label for="tlf">Phone number:</label>
-                <input type="tel" name="tlf" id="tlf" class="input-area">
+                <h3>Sign in here:</h3>
                 <label for="email" class="email-text">E-mail:</label>
                 <input type="email" name="email" id="email" class="input-area" value="@uia.no">
                 <label for="name">Password:</label>
                 <input type="text" name="password" id="text" class="input-area">
-                <!-- <button type="submit" class="button-blue">Create account</button> -->
-                <a href="./forum.html" class="button-blue">Create account »</a> <!-- Er bare en link til forum siden. Laster ikke opp noe data -->
-            </div>
-            <div class="login-link">
-                <a href="/login.html" class="button-blue">Or login here</a>
+                <!-- <input type="submit" value="Create account"> -->
+                <button type="submit" class="button-blue">Login</button>
+                <!-- <a href="./forum.html" class="button-blue">Create account »</a> Er bare en link til forum siden. Laster ikke opp noe data -->
             </div>
         </form>
-
     </div>
+
+<script>
+function handleSubmit(event) {
+    fetch( "./login.json", { cache: "no-cache" }) 
+    .then((response) => response.json())
+    .then(data => {
+        console.log(data)
+
+    });
+}
+
+const form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit); //kjører script når man trykker på knapp
+
+</script>
 </body>
 </html>
