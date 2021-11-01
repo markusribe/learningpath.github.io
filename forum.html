@@ -6,32 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
     <style>
+
         .forum-container {
             display: grid;
             row-gap: 20px;
             column-gap: 10px;
-            font-size: 1.4em;
+            font-size: 1 em;
+            height: fit-content;
         }
         
         /* til mobile skjermer */
         .forum-container {
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-areas: 
-                                    "logo . ."
-                                    ". popular ."
-                                    "subject1 subject2 subject3"
-                                    "subject4 subject5 subject6"
-                                    "subject7 subject8 subject9"
-                                    "subject10 subject11 subject12"
-                                    " . search ."
+            grid-auto-rows: auto;
+            grid-template-areas:
+                                    "logo logo logo"
+                                    "popular popular popular"
+                                    "subjects subjects subjects"
+                                    "subjects subjects subjects"
+                                    "subjects subjects subjects"
+                                    "subjects subjects subjects"
+                                    " search search search"
+                                    ". search-input ."
                                     "navbar navbar navbar"
             ;
         }
 
         /* for desktop og større skjermer */
-        @media (min-width: 760px) {
+        /* @media (min-width: 992px) {
             .forum-container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-areas:    "logo navbar navbar navbar navbar navbar . "
                                     " . . . popular . . ."
                                     " . . subject1 subject2 subject3 . . "
@@ -40,7 +45,7 @@
                                     " . . subject10 subject11 subject12 . . "
                                     " . . . search . . . ";
             }
-        }
+        } */
 
         .logo {
             grid-area: logo;
@@ -58,12 +63,17 @@
             border: 1px solid black;
             padding: 20px;
             border-radius: 10px;
+            margin: 5px;
+        }
+        
+        .nav-element:hover {
+            background-color: skyblue;
         }
 
         .popular {
             grid-area: popular;
             text-align: center;
-            background: cornflowerblue;
+            background: #1A9EEB;
             padding: 10px;
             border-radius: 5px;
         }
@@ -79,47 +89,15 @@
             background: skyblue;
         }
 
-        .subject1 {
-            grid-area: subject1;
-            
+        .nav-element:active , 
+        .forum-subject:active {
+            background: lightblue;
         }
-        .subject2 {
-            grid-area: subject2;
-        }
-        .subject3 {
-            grid-area: subject3;
-        }
-        .subject4 {
-            grid-area: subject4;
-        }
-        .subject5 {
-            grid-area: subject5;
-        }
-        .subject6 {
-            grid-area: subject6;
-        }
-        .subject7 {
-            grid-area: subject7;
-        }
-        .subject8 {
-            grid-area: subject8;
-        }
-        .subject9 {
-            grid-area: subject9;
-        }
-        .subject10 {
-            grid-area: subject10;
-        }
-        .subject11 {
-            grid-area: subject11;
-        }
-        .subject12 {
-            grid-area: subject12;
-        }
+
         .search {
             grid-area: search;
             text-align: center;
-            background: cornflowerblue;
+            background: #1A9EEB;
             padding: 5px;
             border-radius: 5px;
             margin-top: 10px;
@@ -130,6 +108,23 @@
             padding: 10px;
         }
 
+        .UL-container {
+            grid-area: subjects;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .forum-subject {
+            flex: 25%;
+            margin: 5px;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -138,15 +133,80 @@
             <h3>LearningPath</h3>
         </header>
                 <div class="navbar">
-                    <p class="account">account</p>
-                    <p class="forum">forum</p>
-                    <p class="messages">messages</p>
-                    <p class="help">help</p>
+                    <p class="account nav-element">account</p>
+                    <p class="forum nav-element">forum</p>
+                    <p class="messages nav-element">messages</p>
+                    <p class="help nav-element">help</p>
                 </div>
+                
                 <div class="popular">
                     Popular Subjects
                 </div>
-            <div class="forum-subject subject1">
+                <ul class="UL-container" id="myUL">
+                    <li class="forum-subject subject1">
+                        <a>
+                            Javascript
+                        </a>
+                    </li>
+                    <li class="forum-subject subject2">
+                        <a >
+                            History
+                        </a>
+                    </li>
+                    <li class="forum-subject subject3">
+                        <a>
+                            Economics
+                        </a>
+                    </li>
+                    <li class="forum-subject subject4">
+                        <a href="./forum-chat.html">
+                            HTML og CSS
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject5">
+                        <a>
+                            Chemistry
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject6">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject7">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject8">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject9">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject10">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject11">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                    <li  class="forum-subject subject12">
+                        <a>
+                            Subject osv
+                        </a>
+                    </li>
+                </ul>
+
+            <!-- Save state av gammel versjon -->
+            <!-- <div class="forum-subject subject1">
                     Javascript
             </div>
             <div class="forum-subject subject2">
@@ -181,12 +241,35 @@
             </div>
             <div class="forum-subject subject12">
                     Subject osv
-            </div>
+            </div> -->
             <form class="search">
-                <label for="forum-search">Or search for other subjects:</label>
-                <input type="text" id="forum-search">
-                <button>Search</button>
+                <label for="forum-search">Search:</label>
+                <input type="text" id="forum-search" onkeyup="myFunction()" placeholder="Search for subjects..">
             </form>
     </div>
+    <script>
+
+
+        //JavaScript lært fra https://www.w3schools.com/howto/howto_js_filter_lists.asp
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('forum-search');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName('li');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+        </script>
 </body>
 </html>
