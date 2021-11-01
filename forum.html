@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
     <style>
+
         .forum-container {
             display: grid;
             row-gap: 20px;
             column-gap: 10px;
-            font-size: 1.4em;
+            font-size: 1 em;
+            height: fit-content;
         }
         
         /* til mobile skjermer */
         .forum-container {
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-areas: 
+            grid-auto-rows: auto;
+            grid-template-areas:
                                     "logo . ."
-                                    ". popular ."
+                                    "popular popular popular"
                                     "subject1 subject2 subject3"
                                     "subject4 subject5 subject6"
                                     "subject7 subject8 subject9"
                                     "subject10 subject11 subject12"
-                                    " . search ."
+                                    " search search search"
+                                    ". search-input ."
                                     "navbar navbar navbar"
             ;
         }
@@ -32,6 +36,7 @@
         @media (min-width: 760px) {
             .forum-container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-areas:    "logo navbar navbar navbar navbar navbar . "
                                     " . . . popular . . ."
                                     " . . subject1 subject2 subject3 . . "
@@ -183,9 +188,9 @@
                     Subject osv
             </div>
             <form class="search">
-                <label for="forum-search">Or search for other subjects:</label>
+                <label for="forum-search">Search:</label>
                 <input type="text" id="forum-search">
-                <button>Search</button>
+                <button class="search-input">Search</button>
             </form>
     </div>
 </body>
