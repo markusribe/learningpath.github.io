@@ -33,7 +33,7 @@
         }
 
         /* for desktop og større skjermer */
-        @media (min-width: 760px) {
+        @media (min-width: 992px) {
             .forum-container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -64,6 +64,10 @@
             padding: 20px;
             border-radius: 10px;
         }
+        
+        .nav-element:hover {
+            background-color: skyblue;
+        }
 
         .popular {
             grid-area: popular;
@@ -82,6 +86,11 @@
 
         .forum-subject:hover {
             background: skyblue;
+        }
+
+        .nav-element:active , 
+        .forum-subject:active {
+            background: lightblue;
         }
 
         .subject1 {
@@ -135,6 +144,7 @@
             padding: 10px;
         }
 
+
     </style>
 </head>
 <body>
@@ -143,15 +153,64 @@
             <h3>LearningPath</h3>
         </header>
                 <div class="navbar">
-                    <p class="account">account</p>
-                    <p class="forum">forum</p>
-                    <p class="messages">messages</p>
-                    <p class="help">help</p>
+                    <p class="account nav-element">account</p>
+                    <p class="forum nav-element">forum</p>
+                    <p class="messages nav-element">messages</p>
+                    <p class="help nav-element">help</p>
                 </div>
+                
                 <div class="popular">
                     Popular Subjects
                 </div>
-            <div class="forum-subject subject1">
+                <ul id="myUL">
+                    <li class="forum-subject subject1">
+                        <div>
+                            Javascript
+                        </div>
+                    </li>
+                    <li class="forum-subject subject2">
+                        <div >
+                            Historie
+                        </div>
+                    </li>
+                    <li class="forum-subject subject3">
+                        <div>
+                            Økonomi
+                        </div>
+                    </li>
+                    <li class="forum-subject subject4">
+                        <a href="./forum-chat.html">
+                            HTML og CSS
+                        </a>
+                    </li>
+                    <div class="forum-subject subject5">
+                        Subject osv
+                    </div>
+                    <div class="forum-subject subject6">
+                        Subject osv
+                    </div>
+                    <div class="forum-subject subject7">
+                       Subject osv
+                    </div>
+                    <div class="forum-subject subject8">
+                       Subject osv
+                    </div>
+                    <div class="forum-subject subject9">
+                        Subject osv
+                    </div>
+                    <div class="forum-subject subject10">
+                      Subject osv
+                    </div>
+                    <div class="forum-subject subject11">
+                         Subject osv
+                    </div>
+                    <div class="forum-subject subject12">
+                         Subject osv
+                    </div>
+                </ul>
+                
+            <!-- Save state av gammel versjon -->
+            <!-- <div class="forum-subject subject1">
                     Javascript
             </div>
             <div class="forum-subject subject2">
@@ -186,7 +245,7 @@
             </div>
             <div class="forum-subject subject12">
                     Subject osv
-            </div>
+            </div> -->
             <form class="search">
                 <label for="forum-search">Search:</label>
                 <input type="text" id="forum-search">
