@@ -28,7 +28,6 @@
                                     "subjects subjects subjects"
                                     " search search search"
                                     ". search-input ."
-                                    "navbar navbar navbar"
             ;
         }
 
@@ -52,10 +51,11 @@
             font-size: 0.8em;
         }
         .navbar {
-            grid-area: navbar;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            position:fixed;
+            bottom:0;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .navbar > p {
