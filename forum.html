@@ -31,19 +31,20 @@
         }
 
         /* for desktop og større skjermer */
-        /* @media (min-width: 992px) {
+         @media (min-width: 992px) {
             .forum-container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-areas:    "logo navbar navbar navbar navbar navbar . "
+            grid-template-rows: auto;
+            grid-template-areas:    "logo logo logo logo logo logo logo "
                                     " . . . popular . . ."
-                                    " . . subject1 subject2 subject3 . . "
-                                    " . . subject4 subject5 subject6 . . "
-                                    " . . subject7 subject8 subject9 . . "
-                                    " . . subject10 subject11 subject12 . . "
-                                    " . . . search . . . ";
+                                    " . . subjects subjects subjects . . "
+                                    " . . subjects subjects subjects . . "
+                                    " . . subjects subjects subjects . . "
+                                    " . . subjects subjects subjects . . "
+                                    " . . . search . . . "
+                                    ". . . . . . .";
             }
-        } */
+        } 
         
         .logo {
             grid-area: logo;
