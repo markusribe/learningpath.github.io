@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
     <style>
-
+        body {
+            margin: 0;
+        }
         .forum-container {
             display: grid;
-            row-gap: 20px;
-            column-gap: 10px;
             font-size: 1 em;
-            height: fit-content;
         }
         
         /* til mobile skjermer */
@@ -45,25 +44,41 @@
                                     " . . . search . . . ";
             }
         } */
-
+        
         .logo {
             grid-area: logo;
-            font-size: 0.8em;
+            font-size: 1em;
+            background-color: #12CDD4;
+            margin: 0;
+            text-align: center;
         }
+        
+        .logo > img {
+            height: 3em;
+        }
+
         .navbar {
             display: flex;
             position:fixed;
             bottom:0;
             left: 50%;
             transform: translateX(-50%);
+            background-color: #F2F2F2;
+            border-radius: 5px 5px 0 0;
         }
 
-        .navbar > p {
-            font-size: 0.8em;
-            border: 1px solid black;
-            padding: 20px;
-            border-radius: 10px;
+        .navbar > a {
+            font-size: 1em;
+            padding: 10px;
             margin: 5px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-element > img {
+            height: 2em;
         }
         
         .nav-element:hover {
@@ -76,6 +91,9 @@
             background: #1A9EEB;
             padding: 10px;
             border-radius: 5px;
+            margin: 5px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .forum-subject {
@@ -131,12 +149,25 @@
     <div class="forum-container">
         <header class="logo">
             <h3>LearningPath</h3>
+            <img src="./img/text-message.svg">
         </header>
                 <div class="navbar">
-                    <p class="account nav-element">account</p>
-                    <p class="forum nav-element">forum</p>
-                    <p class="messages nav-element">messages</p>
-                    <p class="help nav-element">help</p>
+                    <a href="" class="account nav-element">
+                        <img src="./img/account.svg">
+                        account
+                    </a>
+                    <a href="" class="forum nav-element">
+                        <img src="./img/message.svg">
+                        forum
+                    </a>
+                    <a href="" class="messages nav-element">
+                        <img src="./img/text-message.svg">
+                        messages
+                    </a>
+                    <a href="" class="help nav-element">
+                        <img src="./img/question-mark-round-line.svg">
+                        help
+                    </a>
                 </div>
                 
                 <div class="popular">
