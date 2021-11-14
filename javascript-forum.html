@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif
+        }
+
+        .forum-container {
+            display: grid;
+            font-size: 1 em;
+        }
+
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #12CDD4;
+        }
+        
+        header > p {
+            border: solid 1px black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #back {
+            position: absolute;
+            left: 20px;
+            top: 50px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none; /* no underline */
+        }
+
+        .topic-container {
+            padding: 0;
+        }
+
+        .topic-item {
+        }
+
+        .topic-item:hover {
+            color: #1A9EEB;
+        }
+        .topic-item:active {
+            color: #1378b3;
+        }
+
+        
+        a > h4 {
+            display: flex;
+            background-color: darkgray;
+            margin: 0;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        
+        a > p {
+            display: flex;
+            background-color: lightgray;
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* button for å lage ny topic */
+        .create-topic {
+            position: fixed;
+            display: flex;
+            left: 50%;
+            bottom: 10%;
+            transform: translateX(-50%);
+        }
+
+        .create-topic-button {
+            padding: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 2em;
+            border: 1px solid gray;
+        }
+
+        .navbar {
+            display: flex;
+            position:fixed;
+            bottom:0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #F2F2F2;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .navbar > a {
+            font-size: 1em;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-element > img {
+            height: 2em;
+        }
+        
+        .nav-element:hover {
+            background-color: skyblue;
+        }
+
+        .nav-element:active , 
+        .forum-subject:active {
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#"><img id="back" src="https://img.icons8.com/ios-filled/32/000000/back.png"/></a>
+            <h2>LearningPath</h2>
+            <p>JavaScript</p>
+        </header>
+        <ul id="topic-list" class="topic-container">
+                <a href="#" class="topic-item">
+                    <h4 class="topic-name">Why isn't my code working?? :(</h4>
+                    <p class="topic-description"> Description</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h4 class="topic-name">Topic</h4>
+                    <p class="topic-description"> Description</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h4 class="topic-name">Topic</h4>
+                    <p class="topic-description"> Description</p>
+                </a>
+                <a href="#" class="topic-item">
+                    <h4 class="topic-name">Topic</h4>
+                    <p class="topic-description"> Description</p>
+                </a>
+                <a href="#" class="topic-item" id="user-topic">
+                </a>
+        </ul>
+            <div class="create-topic">
+                <input type="text" id="input-topic" placeholder="Create topic here...">
+                <button id="input-button" class="create-topic-button" onclick="createTopic()">
+                    +
+                </button>
+            </div>
+        <div class="navbar">
+            <a href="" class="account nav-element">
+                <img src="./img/account.svg">
+                account
+            </a>
+            <a href="" class="forum nav-element">
+                <img src="./img/message.svg">
+                forum
+            </a>
+            <a href="" class="messages nav-element">
+                <img src="./img/text-message.svg">
+                messages
+            </a>
+            <a href="" class="help nav-element">
+                <img src="./img/question-mark-round-line.svg">
+                help
+            </a>
+        </div>
+    </div>
+
+    <script>
+        //https://www.w3schools.com/jsref/met_document_createtextnode.asp
+        //lært ved hjelp av denne 
+        //lager nye elementer på siden som er i tekst feltet
+        function createTopic() {
+            //lager innhold
+            var inputName = document.getElementById("input-topic").value; //tar "value" fra input
+            var inputID = document.getElementById("user-topic");
+            var topicH4 = document.createElement("h4");
+            var topicP = document.createElement("p");
+            var inputNode = document.createTextNode(inputName);
+            var pNode = document.createTextNode("Description");
+            //fester tekst verdien til elementet
+            topicH4.appendChild(inputNode);
+            topicP.appendChild(pNode);
+            //legger innhold på siden
+            inputID.appendChild(topicH4);
+            inputID.appendChild(topicP);
+        }
+    </script>
+</body>
+</html>
