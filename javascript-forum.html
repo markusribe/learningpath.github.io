@@ -181,12 +181,13 @@
         //lager nye elementer på siden som er i tekst feltet
         function createTopic() {
             //lager innhold
+            //definerer variabler
             var inputName = document.getElementById("input-topic").value; //tar "value" fra input
-            var inputID = document.getElementById("user-topic");
-            var topicH4 = document.createElement("h4");
-            var topicP = document.createElement("p");
-            var inputNode = document.createTextNode(inputName);
-            var pNode = document.createTextNode("Description");
+            var inputID = document.getElementById("user-topic"); //Finner elementet vi skal legge innholdet inn i
+            var topicH4 = document.createElement("h4"); //lager en h4
+            var topicP = document.createElement("p"); //lager en p
+            var inputNode = document.createTextNode(inputName); //Node som inneholder texten i value variablen
+            var pNode = document.createTextNode("Description"); //Node som inneholder texten "Description"
             //fester tekst verdien til elementet
             topicH4.appendChild(inputNode);
             topicP.appendChild(pNode);
