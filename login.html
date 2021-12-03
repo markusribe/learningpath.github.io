@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LearningPath login</title>
-
     <style>
         header {
             display: flex;
@@ -83,17 +82,16 @@
 
 <script>
     //this shit dont work 
-function handleSubmit(event) {
-    fetch( "./login.json", { cache: "no-cache" }) 
-    .then((response) => response.json())
-    .then(data => {
-        console.log(data)
+// function handleSubmit(event) {
+//     fetch( "./login.json", { cache: "no-cache" }) 
+//     .then((response) => response.json())
+//     .then(data => {
+//         console.log(data)
+//     });
+// }
 
-    });
-}
-
-const form = document.querySelector("form");
-form.addEventListener("submit", handleSubmit); //kjører script når man trykker på knapp
+// const form = document.querySelector("form");
+// form.addEventListener("submit", handleSubmit); //kjører script når man trykker på knapp
 
 </script>
 </body>
